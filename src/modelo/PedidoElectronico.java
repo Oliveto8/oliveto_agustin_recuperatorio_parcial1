@@ -12,7 +12,7 @@ public class PedidoElectronico extends Pedido{
         super(idPedido, fechaCreacion, montoBase);
         this.motivo = motivo;
         this.porcentajeExtra = porcentajeExtra;
-        if (motivo == null){
+        if (motivo == null || motivo.trim().isEmpty()){
             throw new CompletarCampoException("Es obligatorio completar el motivo");
         }            
     }
@@ -22,7 +22,7 @@ public class PedidoElectronico extends Pedido{
     }
 
     public void setMotivo(String motivo) throws CompletarCampoException {
-        if (motivo == null){
+        if (motivo == null || motivo.trim().isEmpty()){
             throw new CompletarCampoException("Es obligatorio completar el motivo");
         }   
         this.motivo = motivo;
